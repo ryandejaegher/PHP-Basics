@@ -1,12 +1,12 @@
 <?php
-$cool = 'ryan';
+$display_name = 'Ryan';
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset=utf-8>
-  <title>PHP Basics at Treehouse</title>
+  <title>PHP Basics by <?php echo $display_name; ?></title>
   <link href="css/style.css" rel="stylesheet" />
 </head>
 
@@ -16,7 +16,7 @@ $cool = 'ryan';
       <div class="avatar">
         <img src="img/logo.png" alt="Alt For Image">
       </div>
-      <h1><?php  echo 'Ryan'; ?></h1>
+      <h1><?php echo $display_name; ?></h1>
       <p>Contact:<br />
         <a href="mailto:">EMAIL</a></p>
       <hr />
@@ -37,7 +37,11 @@ $cool = 'ryan';
     </section>
   </div>
   <section class="footer text-center">
-    &copy; 2016 Treehouse Island, Inc.
+    &copy; <?php echo date('Y'); 
+    echo ' ' . $display_name. '.'; 
+    // outputs e.g. 'Last modified: March 04 1998 20:43:59.'
+    echo ' '. "Last modified: " . date ("F d Y H:i:s.", getlastmod());
+?>
   </section>
 </body>
 
